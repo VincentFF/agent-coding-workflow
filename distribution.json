@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "name": "agent-coding-workflow",
+  "version": "0.1.0",
+  "entry": "INSTALL.md",
+  "install": {
+    "skillsRoot": ".agents/skills",
+    "projectWorkflow": ".agents/project-workflow.md",
+    "agentEntry": "AGENTS.md",
+    "entryBlock": {
+      "begin": "<!-- coding-playbook:begin -->",
+      "end": "<!-- coding-playbook:end -->"
+    }
+  },
+  "lock": {
+    "path": ".agents/coding-playbook.lock.json",
+    "fields": ["repository", "version", "commit", "adapters", "files", "entryBlock"]
+  },
+  "managed": [
+    {
+      "source": "skills",
+      "target": ".agents/skills",
+      "mode": "replace-tree",
+      "description": "Whole skill directories, including references, scripts and tests. Upgraded only when unmodified since install."
+    },
+    {
+      "source": "adapters/<env>/agents",
+      "target": "<env-specific role directory>",
+      "mode": "merge-files",
+      "description": "Role templates for a selected runtime. Existing different files require explicit resolution."
+    },
+    {
+      "source": "templates/project-workflow.md",
+      "target": ".agents/project-workflow.md",
+      "mode": "create-or-merge",
+      "description": "Project-specific facts filled from the actual project. Never overwritten on upgrade."
+    },
+    {
+      "source": "templates/agent-entry-block.md",
+      "target": "AGENTS.md (block only)",
+      "mode": "marked-block",
+      "description": "Only the marked block is maintained. Content outside it is project-owned."
+    }
+  ],
+  "unmanaged": [
+    "README.md",
+    "INSTALL.md",
+    "distribution.json",
+    "NOTICE.md",
+    "LICENSE",
+    "docs",
+    "templates",
+    "skills/*/references/sources.md upstream attribution remains inside copied skills"
+  ],
+  "skills": [
+    "change-planning",
+    "agent-workflow",
+    "prd-writing",
+    "spec-writing",
+    "design-writing",
+    "codebase-design",
+    "domain-modeling",
+    "tdd",
+    "code-review",
+    "grilling"
+  ],
+  "adapters": {
+    "codex": {
+      "roleDirectory": ".codex/agents",
+      "format": "toml",
+      "isolation": "sandbox_mode = read-only for reviewer and oracle; workspace-write for implementer"
+    },
+    "zcode": {
+      "roleDirectory": ".zcode/agents",
+      "format": "markdown-frontmatter",
+      "isolation": "role instruction only; Bash tool is not a read-only sandbox"
+    },
+    "pi": {
+      "roleDirectory": ".pi/agents",
+      "format": "markdown-frontmatter",
+      "isolation": "role instruction plus defaultContext fresh for reviewer; Bash is not a read-only sandbox"
+    }
+  },
+  "excludedFromDistribution": [
+    "Project-specific documents, tests, CI, deployment configuration",
+    "Model or provider selection",
+    "Credentials and environment configuration"
+  ]
+}
