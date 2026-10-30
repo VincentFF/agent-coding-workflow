@@ -35,6 +35,12 @@ Explicit project standards take precedence. Check evidence-backed naming, duplic
 
 Cite the standard for each finding or explicitly label it a judgment, explaining the actual impact. Do not block delivery on speculation unsupported by a contract, reproduction, or code.
 
+## Task-specific Review Methods
+
+Within this same review, read only the applicable methods: [Go review](references/go-review.md) for Go concurrency or resource changes, [silent failures](references/silent-failures.md) for error propagation or suspicious fallbacks, and [PostgreSQL review](references/postgres-review.md) for queries, schemas, transactions, or migrations. TypeScript error work uses only [error-handling](../error-handling/SKILL.md)'s TypeScript reference and silent-failure checks as needed; it does not trigger Go or unselected framework rules. For an explicitly requested output-quality assessment, use [output evaluation](references/output-evaluation.md); its five axes do not prove domain factual correctness or replace contract and boundary evidence. Actual LLM cost or cache questions use the conditional [task methods](../agent-workflow/references/task-methods.md).
+
+These references are perspectives for the existing code-reviewer, not automatic agent dispatch, additional regular stages, or separate approval criteria. Findings retain the Spec and Standards axes and evidence/disposition rules of this skill; upstream style thresholds do not override project standards.
+
 ## 4. Output and Rereview
 
 Report `Spec` and `Standards` separately as pass, blocked or indeterminate for this candidate. List main-agent closeout obligations separately. Each finding has a disposition:

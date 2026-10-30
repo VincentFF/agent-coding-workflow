@@ -6,6 +6,8 @@ This reference owns handoff, evidence and recovery details. The workflow owns pr
 
 Resolve skill files from the actual project collection and supply readable absolute paths. An implementer receives tdd; a code-reviewer receives code-review and any writing-skill paths its assigned review requires. Agents read their role instructions and relevant original contracts. A name, summary or claim of loading is not a substitute for required text. On an unreadable source, report the path and block affected work; do not install tools or alter user role/model configuration as preflight.
 
+Select task-specific skills through the [task methods navigation](task-methods.md), then hand off their resolved absolute SKILL.md paths and only the applicable reference paths. A Go implementation task typically needs golang-patterns, golang-testing, and error-handling's Go reference; the reviewer additionally receives go-review and silent-failures for corresponding doubts. A SQL migration needs postgres-patterns, database-migrations, and postgres-review; TypeScript errors need only error-handling's TypeScript reference and relevant silent-failure checks. LLM cost or cache paths are conditional on the actual question. Do not pass an entire library merely because it exists. Existing tdd, code-review, and design-writing entry points reach these methods for implementer, code-reviewer, and oracle roles; they are not new agent roles or automatic dispatch rules.
+
 ## Context Boundaries
 
 Continue the same implementer where useful and send incremental tasks/results. A new agent receives a focused handoff, with relevant prior investigation when it avoids rediscovery; scope and authorization remain unchanged.

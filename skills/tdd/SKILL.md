@@ -26,6 +26,10 @@ Tests preserving existing behavior may stay green throughout; explain the regres
 
 Documentation, configuration, and packaging tasks do not require red. Use mechanical validation or a short mapping of key facts to authoritative sources. Normative lists, versions, and identifiers need precise source locations; ordinary descriptions do not require sentence-by-sentence fact tables.
 
+## Task-specific Implementation Methods
+
+For Go implementation, read [golang-patterns](../golang-patterns/SKILL.md) and, when adding or changing Go tests, [golang-testing](../golang-testing/SKILL.md). Error propagation and cancellation work uses the matching language reference in [error-handling](../error-handling/SKILL.md); suspected swallowed failures use [silent-failures](../code-review/references/silent-failures.md). SQL/schema work uses [postgres-patterns](../postgres-patterns/SKILL.md), and migrations additionally use [database-migrations](../database-migrations/SKILL.md), preserving the application's existing deployment contract. A concrete Go build, vet, or lint failure uses [go-build-recovery](references/go-build-recovery.md). These are methods for the implementer, not new roles, automatic commands, or extra phases; they do not replace the slice order above. Load LLM cost or cache skills only for an actual cost or cache task via [task methods](../agent-workflow/references/task-methods.md).
+
 ## Validation and Handoff
 
 Run focused tests/static checks and all checks assigned to the implementer. Follow [validation responsibilities](../agent-workflow/references/execution.md#validation-responsibilities) for final checks, source identity and reruns. Return task evidence and unproven scope concisely in the existing handoff; keep detailed logs in run artifacts. Neither reducing execution count nor filling a report justifies changing validation scope.

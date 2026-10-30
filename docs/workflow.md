@@ -72,3 +72,12 @@ docs/changes/YYYY-MM-DD-<topic>/
 - 评审是否独立发生。
 
 这些只能通过阅读原始材料和真实运行来确认。可选的候选身份工具（`candidate.py`）只帮助确认"验证结果对应哪份源码"，不判断正确性。
+
+## 专项方法与按需加载
+
+随着工作流涵盖 Go、PostgreSQL、错误处理及 LLM 成本/缓存等专业领域，工作流引入了**任务级专项方法**：
+
+- 导航入口：`skills/agent-workflow/references/task-methods.md`。
+- 按需加载：不一次性把所有专项技能加载到上下文；只有遇到对应语言（如 Go）、技术边界（如 SQL/Migration）或具体疑问（如 LLM 费用）时才读取对应规则。
+- 角色不膨胀：专项规程（如 `go-review`、`silent-failures`、`postgres-review`、`output-evaluation`、`go-build-recovery`）是现有角色（`implementer`、`code-reviewer`、`oracle`）的工作方法与审查视角，不新增 agent 角色。
+- 契约优先：通用专项技能中的建议不能覆盖目标项目既有的部署策略、迁移工具或接口契约。

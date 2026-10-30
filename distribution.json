@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "agent-coding-workflow",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "entry": "INSTALL.md",
   "install": {
     "skillsRoot": ".agents/skills",
@@ -14,7 +14,14 @@
   },
   "lock": {
     "path": ".agents/coding-playbook.lock.json",
-    "fields": ["repository", "version", "commit", "adapters", "files", "entryBlock"]
+    "fields": [
+      "repository",
+      "version",
+      "commit",
+      "adapters",
+      "files",
+      "entryBlock"
+    ]
   },
   "managed": [
     {
@@ -62,7 +69,14 @@
     "domain-modeling",
     "tdd",
     "code-review",
-    "grilling"
+    "grilling",
+    "golang-patterns",
+    "golang-testing",
+    "postgres-patterns",
+    "database-migrations",
+    "error-handling",
+    "cost-aware-llm-pipeline",
+    "prompt-caching-strategy"
   ],
   "adapters": {
     "codex": {

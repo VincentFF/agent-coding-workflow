@@ -33,3 +33,7 @@ After installation, confirm:
 - `.pi/agents/implementer.md`, `code-reviewer.md`, `oracle.md` exist with valid frontmatter.
 - `code-reviewer.md` retains `defaultContext: fresh` unless the runtime cannot honour it.
 - No model pin was introduced unless the project intentionally set one.
+
+## Skill discovery and reload
+
+Pi natively discovers skills placed in `.agents/skills/`. When newly installed or updated, run `/reload` in the interactive session to refresh discovered skills. You can explicitly invoke any skill using `/skill:<name>` (e.g. `/skill:golang-patterns`). Global skills with the same name or disabled skill settings may affect discovery.

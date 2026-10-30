@@ -43,6 +43,8 @@ Read and apply the original skill at the following boundary; a link or skill nam
 | A consequential decision needs rationale or supersedes an ADR | domain-modeling's ADR method |
 | Existing terminology, established structure, faithful synchronization or diagram/link correction | Work directly; no specialist is required merely to restate an agreement |
 
+For concrete implementation constraints, conditionally read [golang-patterns](../golang-patterns/SKILL.md) for Go interfaces, concurrency, and resources; [error-handling](../error-handling/SKILL.md)'s matching language reference for failure boundaries; and [postgres-patterns](../postgres-patterns/SKILL.md) plus [database-migrations](../database-migrations/SKILL.md) for persistence and migration questions, respecting the project's existing migration tools and deployment contracts. Only an actual LLM cost, budget, or prompt-cache question selects [cost-aware-llm-pipeline](../cost-aware-llm-pipeline/SKILL.md) or [prompt-caching-strategy](../prompt-caching-strategy/SKILL.md); reading them does not authorize unapproved model routing, layered retries, circuit breakers, or new infrastructure. These are analysis methods for the current role, not automatic delegation.
+
 Each specialist owns its analysis methods; do not copy them here or routinely load both. Explicit standalone specialist requests remain valid. Respect confirmed decisions; ask only about consequential new or changed choices, not already approved boundaries or private implementation details.
 
 Complete this step when concepts and structural choices necessary for the affected scope are settled, or remaining decisions are explicitly located in the proposal/Change.

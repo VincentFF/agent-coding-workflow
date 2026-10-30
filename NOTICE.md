@@ -23,6 +23,28 @@
 
 各技能内的 `references/sources.md` 记录该技能的具体保留方法与本地调整。上游 MIT 许可原文保存在 `skills/agent-workflow/references/UPSTREAM-LICENSE`。
 
+
+### Everything Claude Code (ECC)
+
+另有七个专项技能与五个评审/恢复规程改编自 [affaan-m/ECC](https://github.com/affaan-m/ECC)，参考修订 `b38be6a7f6350964d59328b52f0624e1d1d552d1`，采用 MIT 许可。
+
+| 本地技能 / 参考 | 上游来源 |
+| --- | --- |
+| `golang-patterns` | `skills/golang-patterns/SKILL.md` |
+| `golang-testing` | `skills/golang-testing/SKILL.md` |
+| `postgres-patterns` | `skills/postgres-patterns/SKILL.md`（保留 Supabase team MIT 署名） |
+| `database-migrations` | `skills/database-migrations/SKILL.md` |
+| `error-handling` (含 Go & TypeScript 参考) | `skills/error-handling/SKILL.md` |
+| `cost-aware-llm-pipeline` | `skills/cost-aware-llm-pipeline/SKILL.md` |
+| `prompt-caching-strategy` | `skills/prompt-caching-strategy/SKILL.md`（保留 cyberspace-cs 署名） |
+| `code-review/references/go-review.md` | `agents/go-reviewer.md` |
+| `code-review/references/silent-failures.md` | `agents/silent-failure-hunter.md` |
+| `code-review/references/postgres-review.md` | `agents/database-reviewer.md`（保留 Supabase team MIT 署名） |
+| `code-review/references/output-evaluation.md` | `agents/agent-evaluator.md` 与 `skills/agent-self-evaluation/` |
+| `tdd/references/go-build-recovery.md` | `agents/go-build-resolver.md` |
+
+详细保留方法、本地改造与维护说明见 `skills/agent-workflow/references/ecc-sources.md`。上游 MIT 许可原文保存在 `skills/agent-workflow/references/ECC-UPSTREAM-LICENSE`。
+
 ## 本地设计
 
 以下内容为本项目原创，不来自上游：

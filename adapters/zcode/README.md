@@ -26,9 +26,15 @@ Role files do not pin a model. ZCode uses the host default; set `model` only if 
 
 Whether a ZCode subagent inherits the parent conversation depends on how it is launched. The main agent must launch the reviewer without inheriting the implementer's context. If the runtime cannot establish a fresh context, report the review gate unresolved rather than claiming independence.
 
-## Skill discovery
+## Skill discovery and verification
 
-Skills live in `.agents/skills/`. Hand off absolute paths; do not assume automatic discovery.
+ZCode discovers project skills under `.agents/skills/`. You can inspect discovered skills with:
+
+```bash
+zcode skills list --cwd /path/to/project --json
+```
+
+When delegating work to subagents, the main agent must pass the resolved absolute path to the required skill rather than relying on subagent discovery.
 
 ## Verification
 
